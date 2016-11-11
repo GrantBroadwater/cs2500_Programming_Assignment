@@ -6,6 +6,7 @@ Date: November 15, 2016
 */
 
 #include <stdio.h>
+#include "functions.h"
 
 int main()
 {
