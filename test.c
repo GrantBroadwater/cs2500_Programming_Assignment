@@ -24,6 +24,17 @@ bool test1()
   return false;
 }
 
+test2()
+{
+  int x = 4;
+  int y = 3;
+  int m = max(x, y);
+
+  if(m == 4)
+    return true;
+  return false;
+}
+
 performTestCases()
 {
   bool result;
@@ -37,6 +48,17 @@ performTestCases()
   else
   {
     printf("Test 1 passed.\n");
+  }
+
+  result = test2();
+  if(!result)
+  {
+    printf("Test 2 failed.\n");
+    return;
+  }
+  else
+  {
+    printf("Test 2 passed.\n");
   }
 
   return;

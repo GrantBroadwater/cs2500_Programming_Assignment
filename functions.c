@@ -15,3 +15,8 @@ int sum(const int* a, const int start, const int end)
 
   return sum;
 }
+
+int max(const int x, const int y)
+{
+  return (x > y) ? x : y;
+}
