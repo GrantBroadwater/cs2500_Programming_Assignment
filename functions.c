@@ -23,9 +23,13 @@ int max(const int x, const int y)
 
 int getLargestPossibleScore(const int* a, const int i, const int j)
 {
+  int s;
+
   if (i > j)
     return 0;
 
-  return max( (sum(a, i, j) - getLargestPossibleScore(a, i+1, j)),
-              (sum(a, i, j) - getLargestPossibleScore(a, i, j-1)) );
+  s = sum(a, i, j);
+
+  return max( (s - getLargestPossibleScore(a, i+1, j)),
+              (s - getLargestPossibleScore(a, i, j-1)) );
 }
