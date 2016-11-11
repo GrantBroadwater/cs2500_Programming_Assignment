@@ -35,6 +35,16 @@ test2()
   return false;
 }
 
+test3()
+{
+  int a[] = {3,2,2,3,1,2};
+  int x = getLargestPossibleScore(a, 0, 5);
+
+  if(x == 8)
+    return true;
+  return false;
+}
+
 performTestCases()
 {
   bool result;
@@ -59,6 +69,17 @@ performTestCases()
   else
   {
     printf("Test 2 passed.\n");
+  }
+
+  result = test3();
+  if(!result)
+  {
+    printf("Test 3 failed.\n");
+    return;
+  }
+  else
+  {
+    printf("Test 3 passed.\n");
   }
 
   return;
