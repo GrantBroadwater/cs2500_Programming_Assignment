@@ -17,16 +17,6 @@ typedef enum
 
 bool test1(void)
 {
-  int a[] = {5, 5, 1, 1, 1, 1, 1, 10};
-  int s = sum(a, 0, 7);
-
-  if(s == 25)
-    return true;
-  return false;
-}
-
-bool test2(void)
-{
   int x = 4;
   int y = 3;
   int m = max(x, y);
@@ -36,7 +26,7 @@ bool test2(void)
   return false;
 }
 
-bool test3(void)
+bool test2(void)
 {
   int a[] = {3,2,2,3,1,2};
   int size = 6;
@@ -56,7 +46,7 @@ bool test3(void)
   return false;
 }
 
-bool test4(void)
+bool test3(void)
 {
   int a[] = {8, 15, 3, 7};
   int size = 4;
@@ -76,7 +66,7 @@ bool test4(void)
   return false;
 }
 
-bool test5(void)
+bool test4(void)
 {
   int a[] = {8, 15, 3, 7};
   int size = 4;
@@ -133,17 +123,6 @@ bool performTestCases(void)
   else
   {
     printf("Test 4 passed.\n");
-  }
-
-  result = test5();
-  if(!result)
-  {
-    printf("Test 5 failed.\n");
-    return;
-  }
-  else
-  {
-    printf("Test 5 passed.\n");
   }
 
   return;

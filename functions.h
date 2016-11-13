@@ -11,8 +11,6 @@ Date: November 15, 2016
 #include <stdio.h>
 #include <stdlib.h>
 
-int sum(const int* a, const int start, const int end);
-
 int max(const int x, const int y);
 
 int calculateLargestPossibleScore(const int* a, int** table,
