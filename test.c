@@ -6,6 +6,7 @@ Date: November 15, 2016
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "functions.h"
 
 typedef enum
@@ -14,7 +15,7 @@ typedef enum
   true
 } bool;
 
-bool test1()
+bool test1(void)
 {
   int a[] = {5, 5, 1, 1, 1, 1, 1, 10};
   int s = sum(a, 0, 7);
@@ -24,7 +25,7 @@ bool test1()
   return false;
 }
 
-test2()
+bool test2(void)
 {
   int x = 4;
   int y = 3;
@@ -35,17 +36,47 @@ test2()
   return false;
 }
 
-test3()
+bool test3(void)
 {
   int a[] = {3,2,2,3,1,2};
-  int x = getLargestPossibleScore(a, 0, 5);
+  int size = 6;
+  int i, j;
+  int** table;
+  table = (int**)malloc(size * sizeof(int));
+  for(i=0; i<size; i++)
+  {
+    table[i] = (int*)malloc(size * sizeof(int));
+    for(j=0; j<size; j++)
+      table[i][j] = -1;
+  }
+  int x = getLargestPossibleScore(a, table, 0, size-1);
 
   if(x == 8)
     return true;
   return false;
 }
 
-performTestCases()
+bool test4(void)
+{
+  int a[] = {8, 15, 3, 7};
+  int size = 4;
+  int i, j;
+  int** table;
+  table = (int**)malloc(size * sizeof(int));
+  for(i=0; i<size; i++)
+  {
+    table[i] = (int*)malloc(size * sizeof(int));
+    for(j=0; j<size; j++)
+      table[i][j] = -1;
+  }
+  int x = getLargestPossibleScore(a, table, 0, size-1);
+
+  if(x == 22)
+    return true;
+  return false;
+}
+
+bool performTestCases(void)
 {
   bool result;
 
@@ -80,6 +111,17 @@ performTestCases()
   else
   {
     printf("Test 3 passed.\n");
+  }
+
+  result = test4();
+  if(!result)
+  {
+    printf("Test 4 failed.\n");
+    return;
+  }
+  else
+  {
+    printf("Test 4 passed.\n");
   }
 
   return;
