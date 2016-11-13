@@ -49,7 +49,7 @@ bool test3(void)
     for(j=0; j<size; j++)
       table[i][j] = -1;
   }
-  int x = getLargestPossibleScore(a, table, 0, size-1);
+  int x = calculateLargestPossibleScore(a, table, 0, size-1);
 
   if(x == 8)
     return true;
@@ -69,7 +69,18 @@ bool test4(void)
     for(j=0; j<size; j++)
       table[i][j] = -1;
   }
-  int x = getLargestPossibleScore(a, table, 0, size-1);
+  int x = calculateLargestPossibleScore(a, table, 0, size-1);
+
+  if(x == 22)
+    return true;
+  return false;
+}
+
+bool test5(void)
+{
+  int a[] = {8, 15, 3, 7};
+  int size = 4;
+  int x = getLargestPossibleScore(a, size);
 
   if(x == 22)
     return true;
@@ -122,6 +133,17 @@ bool performTestCases(void)
   else
   {
     printf("Test 4 passed.\n");
+  }
+
+  result = test5();
+  if(!result)
+  {
+    printf("Test 5 failed.\n");
+    return;
+  }
+  else
+  {
+    printf("Test 5 passed.\n");
   }
 
   return;
