@@ -23,6 +23,11 @@ int max(const int x, const int y)
   return (x > y) ? x : y;
 }
 
+int min(const int x, const int y)
+{
+  return (x > y) ? y : x;
+}
+
 int calculateLargestPossibleScore(const int* a, int** table,
                             const int i, const int j)
 {
