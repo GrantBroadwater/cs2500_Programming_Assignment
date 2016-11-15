@@ -87,6 +87,39 @@ bool test5(void)
   return false;
 }
 
+bool test6(void)
+{
+  int a[] = {20,30,2,2,2,10};
+  int size = 6;
+  int x = getLargestPossibleScore(a, size);
+
+  if(x == 42)
+    return true;
+  return false;
+}
+
+bool test7(void)
+{
+  int a[] = {7,8};
+  int size = 2;
+  int x = getLargestPossibleScore(a, size);
+
+  if(x == 8)
+    return true;
+  return false;
+}
+
+bool test8()
+{
+  int a[] = {20,30,2,2,2,10,13,1,7,15,17,90};
+  int size = 12;
+  int x = getLargestPossibleScore(a, size);
+  
+  if(x == 148)
+    return true;
+  return false;
+}
+
 bool performTestCases(void)
 {
   bool result;
@@ -144,6 +177,39 @@ bool performTestCases(void)
   else
   {
     printf("Test 5 passed.\n");
+  }
+
+  result = test6();
+  if(!result)
+  {
+    printf("Test 6 failed.\n");
+    return;
+  }
+  else
+  {
+    printf("Test 6 passed.\n");
+  }
+
+  result = test7();
+  if(!result)
+  {
+    printf("Test 7 failed.\n");
+    return;
+  }
+  else
+  {
+    printf("Test 7 passed.\n");
+  }
+
+  result = test8();
+  if(!result)
+  {
+    printf("Test 8 failed.\n");
+    return;
+  }
+  else
+  {
+    printf("Test 8 passed.\n");
   }
 
   return;
